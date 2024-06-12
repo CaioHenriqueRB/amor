@@ -10,7 +10,6 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    font-family: 'Pacifico', cursive;
 }
 
 header {
@@ -18,7 +17,6 @@ header {
     padding: 20px;
     width: 100%;
     text-align: center;
-    font-family: 'Pacifico', cursive;
 }
 
 header h1 {
@@ -34,6 +32,8 @@ main {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Ensure hearts stay within bounds */
 }
 
 section {
@@ -63,7 +63,26 @@ h2 {
     padding: 10px;
     border-radius: 10px;
     margin: 10px 0;
-    font-family: 'Pacifico', cursive;
+}
+
+blockquote {
+    background-color: #ffdddd;
+    padding: 20px;
+    border-left: 10px solid #ff6666;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+blockquote p {
+    margin: 0;
+    font-style: italic;
+}
+
+blockquote footer {
+    margin-top: 10px;
+    text-align: right;
+    font-style: normal;
+    color: #ff6666;
 }
 
 footer {
@@ -83,9 +102,183 @@ footer button {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Pacifico', cursive;
 }
 
 footer button:hover {
     background-color: #ff3333;
+}
+
+/* Estilos específicos para a página de mensagem */
+.message-page header, .message-page footer {
+    background-color: #ff9999;
+}
+
+.message-page body {
+    background-color: #ffe6e6;
+}
+
+/* Estilos para corações no fundo */
+.hearts-background {
+    position: relative;
+    overflow: hidden;
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    animation: float 5s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px);
+        opacity: 0;
+    }
+}
+
+/* Position multiple hearts at random positions */
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 5s;
+}
+
+.heart:nth-child(2) {
+    left: 20%;
+    animation-delay: 1s;
+    animation-duration: 4s;
+}
+
+.heart:nth-child(3) {
+    left: 30%;
+    animation-delay: 2s;
+    animation-duration: 6s;
+}
+
+.heart:nth-child(4) {
+    left: 40%;
+    animation-delay: 3s;
+    animation-duration: 5s;
+}
+
+.heart:nth-child(5) {
+    left: 50%;
+    animation-delay: 2s;
+    animation-duration: 7s;
+}
+
+.heart:nth-child(6) {
+    left: 60%;
+    animation-delay: 1.5s;
+    animation-duration: 6.5s;
+}
+
+.heart:nth-child(7) {
+    left: 70%;
+    animation-delay: 0.5s;
+    animation-duration: 5.5s;
+}
+
+.heart:nth-child(8) {
+    left: 80%;
+    animation-delay: 1s;
+    animation-duration: 4.5s;
+}
+
+.heart:nth-child(9) {
+    left: 90%;
+    animation-delay: 1.5s;
+    animation-duration: 5.5s;
+}
+
+.heart:nth-child(10) {
+    left: 15%;
+    animation-delay: 2.5s;
+    animation-duration: 6.5s;
+}
+
+.heart:nth-child(11) {
+    left: 25%;
+    animation-delay: 0.5s;
+    animation-duration: 7s;
+}
+
+.heart:nth-child(12) {
+    left: 35%;
+    animation-delay: 1.5s;
+    animation-duration: 4.5s;
+}
+
+.heart:nth-child(13) {
+    left: 45%;
+    animation-delay: 2.5s;
+    animation-duration: 5.5s;
+}
+
+.heart:nth-child(14) {
+    left: 55%;
+    animation-delay: 0s;
+    animation-duration: 6.5s;
+}
+
+.heart:nth-child(15) {
+    left: 65%;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.heart:nth-child(16) {
+    left: 75%;
+    animation-delay: 2s;
+    animation-duration: 4s;
+}
+
+.heart:nth-child(17) {
+    left: 85%;
+    animation-delay: 0.5s;
+    animation-duration: 5s;
+}
+
+.heart:nth-child(18) {
+    left: 95%;
+    animation-delay: 1.5s;
+    animation-duration: 6s;
+}
+
+.heart:nth-child(19) {
+    left: 5%;
+    animation-delay: 2.5s;
+    animation-duration: 7s;
+}
+
+.heart:nth-child(20) {
+    left: 95%;
+    animation-delay: 3s;
+    animation-duration: 4.5s;
 }
