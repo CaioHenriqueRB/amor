@@ -6,38 +6,38 @@
     <title>Meu Amor por Você</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos para o carrossel */
         .carousel {
             position: relative;
-            width: 100%;
-            max-width: 600px; /* Define uma largura máxima para o carrossel */
-            margin: auto;
-            overflow: hidden; /* Oculta as imagens que estão fora do viewport */
+            max-width: 600px; /* Largura máxima do carrossel */
+            margin: auto; /* Centraliza o carrossel */
+            overflow: hidden; /* Oculta o excesso de imagens */
         }
+
         .carousel-images {
             display: flex;
-            transition: transform 0.5s ease;
-            width: 100%;
+            transition: transform 0.5s ease; /* Transição suave ao mudar de imagem */
+            width: 100%; /* Ajusta a largura total */
         }
+
         .carousel-image {
-            min-width: 100%; /* Faz com que cada imagem ocupe 100% do carrossel */
-            box-sizing: border-box;
+            min-width: 100%; /* Cada imagem ocupa 100% da largura do carrossel */
+            object-fit: cover; /* Mantém a proporção das imagens */
         }
-        /* Opções de estilização para as setas */
-        .carousel-arrow {
+
+        .carousel-buttons {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.5);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .carousel-button {
+            background-color: rgba(255, 255, 255, 0.7);
             border: none;
-            cursor: pointer;
             padding: 10px;
-        }
-        .prev {
-            left: 10px;
-        }
-        .next {
-            right: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -135,54 +135,50 @@
                     <img class="carousel-image" src="78.JPG" alt="Descrição da Imagem 78">
                     <img class="carousel-image" src="79.JPG" alt="Descrição da Imagem 79">
                     <img class="carousel-image" src="80.JPG" alt="Descrição da Imagem 80">
+                    <img class="carousel-image" src="81.JPG" alt="Descrição da Imagem 81">
+                    <img class="carousel-image" src="82.JPG" alt="Descrição da Imagem 82">
+                    <img class="carousel-image" src="83.JPG" alt="Descrição da Imagem 83">
+                    <img class="carousel-image" src="84.JPG" alt="Descrição da Imagem 84">
+                    <img class="carousel-image" src="85.JPG" alt="Descrição da Imagem 85">
+                    <img class="carousel-image" src="86.JPG" alt="Descrição da Imagem 86">
+                    <img class="carousel-image" src="87.JPG" alt="Descrição da Imagem 87">
+                    <img class="carousel-image" src="88.JPG" alt="Descrição da Imagem 88">
+                    <img class="carousel-image" src="89.JPG" alt="Descrição da Imagem 89">
+                    <img class="carousel-image" src="90.JPG" alt="Descrição da Imagem 90">
+                    <img class="carousel-image" src="91.JPG" alt="Descrição da Imagem 91">
+                    <img class="carousel-image" src="92.JPG" alt="Descrição da Imagem 92">
+                    <img class="carousel-image" src="93.JPG" alt="Descrição da Imagem 93">
+                    <img class="carousel-image" src="94.JPG" alt="Descrição da Imagem 94">
+                    <img class="carousel-image" src="95.JPG" alt="Descrição da Imagem 95">
+                    <img class="carousel-image" src="96.JPG" alt="Descrição da Imagem 96">
+                    <img class="carousel-image" src="97.JPG" alt="Descrição da Imagem 97">
+                    <img class="carousel-image" src="98.JPG" alt="Descrição da Imagem 98">
+                    <img class="carousel-image" src="99.JPG" alt="Descrição da Imagem 99">
+                    <img class="carousel-image" src="100.JPG" alt="Descrição da Imagem 100">
                 </div>
             </div>
         </section>
-        <section id="contador">
+        <section id="messages">
+            <h2>Mensagens de Amor</h2>
+            <div class="message-container">
+                <p>Mensagem 1: Te amo mais do que tudo!</p>
+                <p>Mensagem 2: Cada momento com você é inesquecível.</p>
+                <p>Mensagem 3: Obrigado por ser você.</p>
+            </div>
+        </section>
+        <section id="countdown">
             <h2>Contador de Tempo Juntos</h2>
             <div id="contador"></div>
         </section>
     </main>
-
+    <footer>
+        <button onclick="window.location.href='message.html'"> 🌹 Clique para uma mensagem especial  🌹</button>
+        <p>Com amor, Caio Barreto</p>
+    </footer>
     <script>
-        const dataInicio = new Date("2023-09-10"); // Data de início
-
-        function calcularTempoDesde(data) {
-            const agora = new Date();
-            let anos = agora.getFullYear() - data.getFullYear();
-            let meses = agora.getMonth() - data.getMonth();
-            let dias = agora.getDate() - data.getDate();
-
-            if (dias < 0) {
-                meses--;
-                dias += new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
-            }
-            if (meses < 0) {
-                anos--;
-                meses += 12;
-            }
-
-            return { anos, meses, dias };
-        }
-
-        function atualizarContador() {
-            const { anos, meses, dias } = calcularTempoDesde(dataInicio);
-            const agora = new Date();
-
-            const horas = agora.getHours();
-            const minutos = agora.getMinutes();
-            const segundos = agora.getSeconds();
-
-            document.getElementById("contador").innerText = `Estamos juntos há ${anos} anos, ${meses} meses e ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos.`;
-        }
-
-        setInterval(atualizarContador, 1000); // Atualiza a cada segundo
-        atualizarContador(); // Inicializa imediatamente
-
-        // Carrossel de imagens
-        let currentIndex = 0;
         const images = document.querySelectorAll('.carousel-image');
         const totalImages = images.length;
+        let currentIndex = 0;
 
         function showNextImage() {
             currentIndex = (currentIndex + 1) % totalImages; // Avança para a próxima imagem
