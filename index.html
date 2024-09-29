@@ -99,8 +99,6 @@
                 <img src="78.JPG" alt="Descrição da Imagem 1">
                 <img src="79.JPG" alt="Descrição da Imagem 1">
                 <img src="80.JPG" alt="Descrição da Imagem 1">
-                
-                
             </div>
         </section>
         <section id="messages">
@@ -111,11 +109,50 @@
                 <p>Mensagem 3: Obrigado por ser você.</p>
             </div>
         </section>
+        <section id="countdown">
+            <h2>Contador de Tempo Juntos</h2>
+            <div id="contador"></div>
+        </section>
     </main>
     <footer>
         <button onclick="window.location.href='message.html'"> 🌹 Clique para uma mensagem especial  🌹</button>
         <p>Com amor, Caio Barreto</p>
     </footer>
     <script src="scripts.js"></script>
+    <script>
+        function calcularTempoDesde(dataInicio) {
+            const agora = new Date();
+            const anos = agora.getFullYear() - dataInicio.getFullYear();
+            const meses = agora.getMonth() - dataInicio.getMonth();
+            const dias = agora.getDate() - dataInicio.getDate();
+
+            let totalMeses = anos * 12 + meses;
+
+            // Ajusta se o dia atual for menor que o dia de início
+            if (dias < 0) {
+                totalMeses--;
+            }
+
+            const anosContados = Math.floor(totalMeses / 12);
+            const mesesContados = totalMeses % 12;
+
+            return { anos: anosContados, meses: mesesContados, dias: dias + (dias < 0 ? new Date(agora.getFullYear(), agora.getMonth(), 0).getDate() : 0) };
+        }
+
+        function atualizarContador() {
+            const dataInicio = new Date(2023, 8, 10); // 10 de setembro de 2023
+            const { anos, meses, dias } = calcularTempoDesde(dataInicio);
+            const agora = new Date();
+
+            const horas = agora.getHours();
+            const minutos = agora.getMinutes();
+            const segundos = agora.getSeconds();
+
+            document.getElementById("contador").innerText = `Estamos juntos há ${anos} anos, ${meses} meses e ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos.`;
+        }
+
+        setInterval(atualizarContador, 1000); // Atualiza a cada segundo
+        atualizarContador(); // Inicializa imediatamente
+    </script>
 </body>
 </html>
