@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Amor por Você</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para o carrossel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Define uma largura máxima para o carrossel */
+            margin: auto;
+            overflow: hidden; /* Oculta as imagens que estão fora do viewport */
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+        .carousel-image {
+            min-width: 100%; /* Faz com que cada imagem ocupe 100% do carrossel */
+            box-sizing: border-box;
+        }
+        /* Opções de estilização para as setas */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,129 +53,119 @@
         </section>
         <section id="gallery">
             <h2>Galeria de Memórias</h2>
-            <div class="gallery-container">
-                <img src="1.JPG" alt="Descrição da Imagem 1">
-                <img src="2.JPG" alt="Descrição da Imagem 1">
-                <img src="3.JPG" alt="Descrição da Imagem 1">
-                <img src="4.JPG" alt="Descrição da Imagem 1">
-                <img src="5.JPG" alt="Descrição da Imagem 1">
-                <img src="6.JPG" alt="Descrição da Imagem 1">
-                <img src="7.JPG" alt="Descrição da Imagem 1">
-                <img src="8.JPG" alt="Descrição da Imagem 1">
-                <img src="9.JPG" alt="Descrição da Imagem 1">
-                <img src="10.JPG" alt="Descrição da Imagem 1">
-                <img src="11.JPG" alt="Descrição da Imagem 1">
-                <img src="12.JPG" alt="Descrição da Imagem 1">
-                <img src="13.JPG" alt="Descrição da Imagem 1">
-                <img src="14.JPG" alt="Descrição da Imagem 1">
-                <img src="15.JPG" alt="Descrição da Imagem 1">
-                <img src="16.JPG" alt="Descrição da Imagem 1">
-                <img src="17.JPG" alt="Descrição da Imagem 1">
-                <img src="18.JPG" alt="Descrição da Imagem 1">
-                <img src="19.JPG" alt="Descrição da Imagem 1">
-                <img src="20.JPG" alt="Descrição da Imagem 1">
-                <img src="21.JPG" alt="Descrição da Imagem 1">
-                <img src="22.JPG" alt="Descrição da Imagem 1">
-                <img src="23.JPG" alt="Descrição da Imagem 1">
-                <img src="24.JPG" alt="Descrição da Imagem 1">
-                <img src="25.JPG" alt="Descrição da Imagem 1">
-                <img src="26.JPG" alt="Descrição da Imagem 1">
-                <img src="27.JPG" alt="Descrição da Imagem 1">
-                <img src="28.JPG" alt="Descrição da Imagem 1">
-                <img src="29.JPG" alt="Descrição da Imagem 1">
-                <img src="30.JPG" alt="Descrição da Imagem 1">
-                <img src="31.JPG" alt="Descrição da Imagem 1">
-                <img src="32.JPG" alt="Descrição da Imagem 1">
-                <img src="33.JPG" alt="Descrição da Imagem 1">
-                <img src="34.JPG" alt="Descrição da Imagem 1">
-                <img src="35.JPG" alt="Descrição da Imagem 1">
-                <img src="36.JPG" alt="Descrição da Imagem 1">
-                <img src="37.JPG" alt="Descrição da Imagem 1">
-                <img src="38.JPG" alt="Descrição da Imagem 1">
-                <img src="39.JPG" alt="Descrição da Imagem 1">
-                <img src="40.JPG" alt="Descrição da Imagem 1">
-                <img src="41.JPG" alt="Descrição da Imagem 1">
-                <img src="42.JPG" alt="Descrição da Imagem 1">
-                <img src="43.JPG" alt="Descrição da Imagem 1">
-                <img src="44.JPG" alt="Descrição da Imagem 1">
-                <img src="45.JPG" alt="Descrição da Imagem 1">
-                <img src="46.JPG" alt="Descrição da Imagem 1">
-                <img src="47.JPG" alt="Descrição da Imagem 1">
-                <img src="48.JPG" alt="Descrição da Imagem 1">
-                <img src="49.JPG" alt="Descrição da Imagem 1">
-                <img src="50.JPG" alt="Descrição da Imagem 1">
-                <img src="51.JPG" alt="Descrição da Imagem 1">
-                <img src="52.JPG" alt="Descrição da Imagem 1">
-                <img src="53.JPG" alt="Descrição da Imagem 1">
-                <img src="54.JPG" alt="Descrição da Imagem 1">
-                <img src="55.JPG" alt="Descrição da Imagem 1">
-                <img src="56.JPG" alt="Descrição da Imagem 1">
-                <img src="57.JPG" alt="Descrição da Imagem 1">
-                <img src="58.JPG" alt="Descrição da Imagem 1">
-                <img src="59.JPG" alt="Descrição da Imagem 1">
-                <img src="60.JPG" alt="Descrição da Imagem 1">
-                <img src="61.JPG" alt="Descrição da Imagem 1">
-                <img src="62.JPG" alt="Descrição da Imagem 1">
-                <img src="63.JPG" alt="Descrição da Imagem 1">
-                <img src="64.JPG" alt="Descrição da Imagem 1">
-                <img src="65.JPG" alt="Descrição da Imagem 1">
-                <img src="66.JPG" alt="Descrição da Imagem 1">
-                <img src="67.JPG" alt="Descrição da Imagem 1">
-                <img src="68.JPG" alt="Descrição da Imagem 1">
-                <img src="69.JPG" alt="Descrição da Imagem 1">
-                <img src="70.JPG" alt="Descrição da Imagem 1">
-                <img src="71.JPG" alt="Descrição da Imagem 1">
-                <img src="72.JPG" alt="Descrição da Imagem 1">
-                <img src="73.JPG" alt="Descrição da Imagem 1">
-                <img src="74.JPG" alt="Descrição da Imagem 1">
-                <img src="75.JPG" alt="Descrição da Imagem 1">
-                <img src="76.JPG" alt="Descrição da Imagem 1">
-                <img src="77.JPG" alt="Descrição da Imagem 1">
-                <img src="78.JPG" alt="Descrição da Imagem 1">
-                <img src="79.JPG" alt="Descrição da Imagem 1">
-                <img src="80.JPG" alt="Descrição da Imagem 1">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img class="carousel-image" src="1.JPG" alt="Descrição da Imagem 1">
+                    <img class="carousel-image" src="2.JPG" alt="Descrição da Imagem 2">
+                    <img class="carousel-image" src="3.JPG" alt="Descrição da Imagem 3">
+                    <img class="carousel-image" src="4.JPG" alt="Descrição da Imagem 4">
+                    <img class="carousel-image" src="5.JPG" alt="Descrição da Imagem 5">
+                    <img class="carousel-image" src="6.JPG" alt="Descrição da Imagem 6">
+                    <img class="carousel-image" src="7.JPG" alt="Descrição da Imagem 7">
+                    <img class="carousel-image" src="8.JPG" alt="Descrição da Imagem 8">
+                    <img class="carousel-image" src="9.JPG" alt="Descrição da Imagem 9">
+                    <img class="carousel-image" src="10.JPG" alt="Descrição da Imagem 10">
+                    <img class="carousel-image" src="11.JPG" alt="Descrição da Imagem 11">
+                    <img class="carousel-image" src="12.JPG" alt="Descrição da Imagem 12">
+                    <img class="carousel-image" src="13.JPG" alt="Descrição da Imagem 13">
+                    <img class="carousel-image" src="14.JPG" alt="Descrição da Imagem 14">
+                    <img class="carousel-image" src="15.JPG" alt="Descrição da Imagem 15">
+                    <img class="carousel-image" src="16.JPG" alt="Descrição da Imagem 16">
+                    <img class="carousel-image" src="17.JPG" alt="Descrição da Imagem 17">
+                    <img class="carousel-image" src="18.JPG" alt="Descrição da Imagem 18">
+                    <img class="carousel-image" src="19.JPG" alt="Descrição da Imagem 19">
+                    <img class="carousel-image" src="20.JPG" alt="Descrição da Imagem 20">
+                    <img class="carousel-image" src="21.JPG" alt="Descrição da Imagem 21">
+                    <img class="carousel-image" src="22.JPG" alt="Descrição da Imagem 22">
+                    <img class="carousel-image" src="23.JPG" alt="Descrição da Imagem 23">
+                    <img class="carousel-image" src="24.JPG" alt="Descrição da Imagem 24">
+                    <img class="carousel-image" src="25.JPG" alt="Descrição da Imagem 25">
+                    <img class="carousel-image" src="26.JPG" alt="Descrição da Imagem 26">
+                    <img class="carousel-image" src="27.JPG" alt="Descrição da Imagem 27">
+                    <img class="carousel-image" src="28.JPG" alt="Descrição da Imagem 28">
+                    <img class="carousel-image" src="29.JPG" alt="Descrição da Imagem 29">
+                    <img class="carousel-image" src="30.JPG" alt="Descrição da Imagem 30">
+                    <img class="carousel-image" src="31.JPG" alt="Descrição da Imagem 31">
+                    <img class="carousel-image" src="32.JPG" alt="Descrição da Imagem 32">
+                    <img class="carousel-image" src="33.JPG" alt="Descrição da Imagem 33">
+                    <img class="carousel-image" src="34.JPG" alt="Descrição da Imagem 34">
+                    <img class="carousel-image" src="35.JPG" alt="Descrição da Imagem 35">
+                    <img class="carousel-image" src="36.JPG" alt="Descrição da Imagem 36">
+                    <img class="carousel-image" src="37.JPG" alt="Descrição da Imagem 37">
+                    <img class="carousel-image" src="38.JPG" alt="Descrição da Imagem 38">
+                    <img class="carousel-image" src="39.JPG" alt="Descrição da Imagem 39">
+                    <img class="carousel-image" src="40.JPG" alt="Descrição da Imagem 40">
+                    <img class="carousel-image" src="41.JPG" alt="Descrição da Imagem 41">
+                    <img class="carousel-image" src="42.JPG" alt="Descrição da Imagem 42">
+                    <img class="carousel-image" src="43.JPG" alt="Descrição da Imagem 43">
+                    <img class="carousel-image" src="44.JPG" alt="Descrição da Imagem 44">
+                    <img class="carousel-image" src="45.JPG" alt="Descrição da Imagem 45">
+                    <img class="carousel-image" src="46.JPG" alt="Descrição da Imagem 46">
+                    <img class="carousel-image" src="47.JPG" alt="Descrição da Imagem 47">
+                    <img class="carousel-image" src="48.JPG" alt="Descrição da Imagem 48">
+                    <img class="carousel-image" src="49.JPG" alt="Descrição da Imagem 49">
+                    <img class="carousel-image" src="50.JPG" alt="Descrição da Imagem 50">
+                    <img class="carousel-image" src="51.JPG" alt="Descrição da Imagem 51">
+                    <img class="carousel-image" src="52.JPG" alt="Descrição da Imagem 52">
+                    <img class="carousel-image" src="53.JPG" alt="Descrição da Imagem 53">
+                    <img class="carousel-image" src="54.JPG" alt="Descrição da Imagem 54">
+                    <img class="carousel-image" src="55.JPG" alt="Descrição da Imagem 55">
+                    <img class="carousel-image" src="56.JPG" alt="Descrição da Imagem 56">
+                    <img class="carousel-image" src="57.JPG" alt="Descrição da Imagem 57">
+                    <img class="carousel-image" src="58.JPG" alt="Descrição da Imagem 58">
+                    <img class="carousel-image" src="59.JPG" alt="Descrição da Imagem 59">
+                    <img class="carousel-image" src="60.JPG" alt="Descrição da Imagem 60">
+                    <img class="carousel-image" src="61.JPG" alt="Descrição da Imagem 61">
+                    <img class="carousel-image" src="62.JPG" alt="Descrição da Imagem 62">
+                    <img class="carousel-image" src="63.JPG" alt="Descrição da Imagem 63">
+                    <img class="carousel-image" src="64.JPG" alt="Descrição da Imagem 64">
+                    <img class="carousel-image" src="65.JPG" alt="Descrição da Imagem 65">
+                    <img class="carousel-image" src="66.JPG" alt="Descrição da Imagem 66">
+                    <img class="carousel-image" src="67.JPG" alt="Descrição da Imagem 67">
+                    <img class="carousel-image" src="68.JPG" alt="Descrição da Imagem 68">
+                    <img class="carousel-image" src="69.JPG" alt="Descrição da Imagem 69">
+                    <img class="carousel-image" src="70.JPG" alt="Descrição da Imagem 70">
+                    <img class="carousel-image" src="71.JPG" alt="Descrição da Imagem 71">
+                    <img class="carousel-image" src="72.JPG" alt="Descrição da Imagem 72">
+                    <img class="carousel-image" src="73.JPG" alt="Descrição da Imagem 73">
+                    <img class="carousel-image" src="74.JPG" alt="Descrição da Imagem 74">
+                    <img class="carousel-image" src="75.JPG" alt="Descrição da Imagem 75">
+                    <img class="carousel-image" src="76.JPG" alt="Descrição da Imagem 76">
+                    <img class="carousel-image" src="77.JPG" alt="Descrição da Imagem 77">
+                    <img class="carousel-image" src="78.JPG" alt="Descrição da Imagem 78">
+                    <img class="carousel-image" src="79.JPG" alt="Descrição da Imagem 79">
+                    <img class="carousel-image" src="80.JPG" alt="Descrição da Imagem 80">
+                </div>
             </div>
         </section>
-        <section id="messages">
-            <h2>Mensagens de Amor</h2>
-            <div class="message-container">
-                <p>Mensagem 1: Te amo mais do que tudo!</p>
-                <p>Mensagem 2: Cada momento com você é inesquecível.</p>
-                <p>Mensagem 3: Obrigado por ser você.</p>
-            </div>
-        </section>
-        <section id="countdown">
+        <section id="contador">
             <h2>Contador de Tempo Juntos</h2>
             <div id="contador"></div>
         </section>
     </main>
-    <footer>
-        <button onclick="window.location.href='message.html'"> 🌹 Clique para uma mensagem especial  🌹</button>
-        <p>Com amor, Caio Barreto</p>
-    </footer>
-    <script src="scripts.js"></script>
+
     <script>
-        function calcularTempoDesde(dataInicio) {
+        const dataInicio = new Date("2023-09-10"); // Data de início
+
+        function calcularTempoDesde(data) {
             const agora = new Date();
-            const anos = agora.getFullYear() - dataInicio.getFullYear();
-            const meses = agora.getMonth() - dataInicio.getMonth();
-            const dias = agora.getDate() - dataInicio.getDate();
+            let anos = agora.getFullYear() - data.getFullYear();
+            let meses = agora.getMonth() - data.getMonth();
+            let dias = agora.getDate() - data.getDate();
 
-            let totalMeses = anos * 12 + meses;
-
-            // Ajusta se o dia atual for menor que o dia de início
             if (dias < 0) {
-                totalMeses--;
+                meses--;
+                dias += new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+            }
+            if (meses < 0) {
+                anos--;
+                meses += 12;
             }
 
-            const anosContados = Math.floor(totalMeses / 12);
-            const mesesContados = totalMeses % 12;
-
-            return { anos: anosContados, meses: mesesContados, dias: dias + (dias < 0 ? new Date(agora.getFullYear(), agora.getMonth(), 0).getDate() : 0) };
+            return { anos, meses, dias };
         }
 
         function atualizarContador() {
-            const dataInicio = new Date(2023, 8, 10); // 10 de setembro de 2023
             const { anos, meses, dias } = calcularTempoDesde(dataInicio);
             const agora = new Date();
 
@@ -148,11 +173,24 @@
             const minutos = agora.getMinutes();
             const segundos = agora.getSeconds();
 
-            document.getElementById("contador").innerText = `${anos} anos, ${meses} meses e ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos.`;
+            document.getElementById("contador").innerText = `Estamos juntos há ${anos} anos, ${meses} meses e ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos.`;
         }
 
         setInterval(atualizarContador, 1000); // Atualiza a cada segundo
         atualizarContador(); // Inicializa imediatamente
+
+        // Carrossel de imagens
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-image');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % totalImages; // Avança para a próxima imagem
+            const offset = -currentIndex * 100; // Calcula o deslocamento
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`; // Aplica o deslocamento
+        }
+
+        setInterval(showNextImage, 3000); // Muda a imagem a cada 3 segundos
     </script>
 </body>
 </html>
