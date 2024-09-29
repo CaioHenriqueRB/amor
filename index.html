@@ -148,7 +148,7 @@
             const minutos = agora.getMinutes();
             const segundos = agora.getSeconds();
 
-            document.getElementById("contador").innerText = `Estamos juntos há ${anos} anos, ${meses} meses e ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos.`;
+            document.getElementById("contador").innerText = `${anos} anos, ${meses} meses e ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos.`;
         }
 
         setInterval(atualizarContador, 1000); // Atualiza a cada segundo
