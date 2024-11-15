@@ -210,5 +210,57 @@
         setInterval(atualizarContador, 1000);
         atualizarContador(); // Chamada inicial
     </script>
+    <script>
+        function verificarDia15() {
+            const hoje = new Date();
+            if (hoje.getDate() === 15) {
+                const mensagemContainer = document.createElement('div');
+                mensagemContainer.style.position = 'fixed';
+                mensagemContainer.style.top = '50%';
+                mensagemContainer.style.left = '50%';
+                mensagemContainer.style.transform = 'translate(-50%, -50%)';
+                mensagemContainer.style.padding = '20px';
+                mensagemContainer.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                mensagemContainer.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+                mensagemContainer.style.textAlign = 'center';
+                mensagemContainer.style.borderRadius = '10px';
+                mensagemContainer.innerHTML = `
+                    <h2>❤️ Feliz nosso dia 10 ❤️</h2>
+                    <p>Amo você mais que tudo!</p>
+                `;
+                
+                document.body.appendChild(mensagemContainer);
+    
+                // Adiciona animação de corações
+                for (let i = 0; i < 20; i++) {
+                    const coracao = document.createElement('div');
+                    coracao.innerText = '❤️';
+                    coracao.style.position = 'fixed';
+                    coracao.style.fontSize = '24px';
+                    coracao.style.animation = `flutuar ${Math.random() * 5 + 5}s linear infinite`;
+                    coracao.style.left = `${Math.random() * 100}vw`;
+                    coracao.style.bottom = '-50px';
+                    document.body.appendChild(coracao);
+    
+                    coracao.style.animationDelay = `${Math.random() * 5}s`;
+                    coracao.style.animationName = 'flutuar';
+    
+                    const keyframes = `
+                        @keyframes flutuar {
+                            0% { transform: translateY(0); opacity: 1; }
+                            100% { transform: translateY(-150vh); opacity: 0; }
+                        }
+                    `;
+                    const style = document.createElement('style');
+                    style.innerHTML = keyframes;
+                    document.head.appendChild(style);
+                }
+            }
+        }
+    
+        // Verifica se é dia 10 ao carregar a página
+        verificarDia15();
+    </script>
+    
 </body>
 </html>
