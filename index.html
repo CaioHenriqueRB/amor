@@ -82,56 +82,55 @@
         </button>
         <p>&copy; 2024 Meu Amor por Você</p>
     </footer>
-    <script>
-        let indexImagem = 0;
+        <script>
+      let indexImagem = 0;
 
-        function mudarImagem(direcao) {
-            const imagens = document.querySelectorAll('.carousel-images img');
-            indexImagem += direcao;
-            if (indexImagem >= imagens.length) indexImagem = 0;
-            if (indexImagem < 0) indexImagem = imagens.length - 1;
-            atualizarImagem();
+      function mudarImagem(direcao) {
+        const imagens = document.querySelectorAll('.carousel-images img');
+        indexImagem += direcao;
+        if (indexImagem >= imagens.length) indexImagem = 0;
+        if (indexImagem < 0) indexImagem = imagens.length - 1;
+        atualizarImagem();
+      }
+
+      function atualizarImagem() {
+        const imagens = document.querySelector('.carousel-images');
+        imagens.style.transform = 'translateX(' + (-indexImagem * 100) + '%)';
+      }
+
+      function atualizarContador() {
+        const inicio = new Date('2023-09-10T00:00:00');
+        const agora = new Date();
+        let diff = agora - inicio;
+
+        const anos = agora.getFullYear() - inicio.getFullYear();
+        const meses = agora.getMonth() - inicio.getMonth() + anos * 12;
+        const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutos = Math.floor((diff / (1000 * 60)) % 60);
+        const segundos = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('contador').innerHTML = 
+          `${Math.floor(meses / 12)} anos, ${meses % 12} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('carouselImages');
+
+        for (let i = 1; i <= 80; i++) {
+          const img = document.createElement('img');
+          img.src = `${i}.JPG`;
+          img.alt = `Descrição da Imagem ${i}`;
+          container.appendChild(img);
         }
 
-        function atualizarImagem() {
-            const imagens = document.querySelector('.carousel-images');
-            imagens.style.transform = 'translateX(' + (-indexImagem * 100) + '%)';
-        }
-
-        function atualizarContador() {
-            const inicio = new Date('2023-09-10T00:00:00');
-            const agora = new Date();
-            let diff = agora - inicio;
-
-            const anos = agora.getFullYear() - inicio.getFullYear();
-            const meses = agora.getMonth() - inicio.getMonth() + anos * 12;
-            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutos = Math.floor((diff / (1000 * 60)) % 60);
-            const segundos = Math.floor((diff / 1000) % 60);
-
-            document.getElementById('contador').innerHTML = 
-                `${Math.floor(meses / 12)} anos, ${meses % 12} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
-        }
-
-        setInterval(atualizarContador, 1000);
         atualizarContador();
         atualizarImagem();
+        setInterval(atualizarContador, 1000);
+
+        console.log('Site carregado');
+      });
     </script>
-    <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('carouselImages');
-
-    for (let i = 1; i <= 80; i++) {
-      const img = document.createElement('img');
-      img.src = `${i}.JPG`;
-      img.alt = `Descrição da Imagem ${i}`;
-      container.appendChild(img);
-    }
-
-    console.log('Site carregado');
-  });
-</script>
-
+    
 </body>
 </html>
