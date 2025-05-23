@@ -58,10 +58,7 @@
         <section id="gallery">
             <h2>Galeria de Memórias</h2>
             <div class="carousel">
-                <div class="carousel-images">
-                    <!-- 80 imagens -->
-                    ${Array.from({length: 80}, (_, i) => `<img src="${i+1}.JPG" alt="Descrição da Imagem ${i+1}">`).join('')}
-                </div>
+                <div id="carouselImages" class="carousel-images"></div>
                 <button class="carousel-button left" onclick="mudarImagem(-1)">&#10094;</button>
                 <button class="carousel-button right" onclick="mudarImagem(1)">&#10095;</button>
             </div>
@@ -121,5 +118,20 @@
         atualizarContador();
         atualizarImagem();
     </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('carouselImages');
+
+    for (let i = 1; i <= 80; i++) {
+      const img = document.createElement('img');
+      img.src = `${i}.JPG`;
+      img.alt = `Descrição da Imagem ${i}`;
+      container.appendChild(img);
+    }
+
+    console.log('Site carregado');
+  });
+</script>
+
 </body>
 </html>
