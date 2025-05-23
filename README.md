@@ -1,4 +1,4 @@
-# 💖 Página Romântica Personalizada para Casais
+# 💖 Página Romântica Personalizada
 
 Este projeto foi criado com o coração por mim para oferecer uma experiência emocional para minha namorada.
 
